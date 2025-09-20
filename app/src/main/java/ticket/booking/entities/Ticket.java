@@ -1,4 +1,4 @@
-package org.example.entities;
+package ticket.booking.entities;
 
 import java.time.LocalDateTime;
 import java.util.Date;
