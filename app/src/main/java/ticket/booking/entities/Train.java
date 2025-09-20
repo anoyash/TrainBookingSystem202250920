@@ -11,7 +11,7 @@ public class Train {
     private Integer trainNo;
     private List<List<Integer>> trainSeats;
     /*
-    * Industry practice is they user String
+    * Industry practice is they use String for Time as well
     * */
     private Map<String, String> stationTimes;
     private List<String> stations;

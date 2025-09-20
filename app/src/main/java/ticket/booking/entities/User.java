@@ -1,5 +1,7 @@
 package ticket.booking.entities;
 
+import ticket.booking.util.UserServiceUtil;
+
 import java.util.List;
 
 public class User {
@@ -8,6 +10,7 @@ public class User {
     private String email;
     private String uuid;  /* Unique user id for the user */
     private String password;
+    private String hashedPassword;
     private List<Ticket> ticketsBooked;
 
     public User(String name, String address, String email, String uuid, String password, List<Ticket> ticketsBooked) {
@@ -16,6 +19,7 @@ public class User {
         this.email = email;
         this.uuid = uuid;
         this.password = password;
+        this.hashedPassword = UserServiceUtil.hashPassword(password);
         this.ticketsBooked = ticketsBooked;
     }
 
@@ -37,6 +41,10 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getHashedPassword(){
+        return hashedPassword;
     }
 
     public List<Ticket> getTicketsBooked() {
