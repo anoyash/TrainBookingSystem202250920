@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-public class UserBookingSerice {
+public class UserBookingService {
 
     private User user;
     private List<User> userList;
@@ -18,7 +18,7 @@ public class UserBookingSerice {
 
     private static final String USERS_PATH = "./LocalDB/User.json";
 
-    public UserBookingSerice(User newUser) throws IOException {
+    public UserBookingService(User newUser) throws IOException {
         this.user = newUser;
         File users = new File(USERS_PATH);
         /* We are using object mapper for de-serializing the json data.
@@ -29,7 +29,7 @@ public class UserBookingSerice {
 
     public Boolean loginUser(User newUser){
         Optional<User> foundUser = userList.stream().filter( user1 -> {
-            return user1.getName().equals(user.getName()) && UserServiceUtil.checkPassword(user.getHashedPassword(), user1)
+            return user1.getName().equals(user.getName()) && UserServiceUtil.checkPassword(user.getHashedPassword(), user1);
         }).findFirst();
 
         return foundUser.isPresent();
