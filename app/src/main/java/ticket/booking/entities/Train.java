@@ -10,6 +10,9 @@ public class Train {
     private String trainId;
     private Integer trainNo;
     private List<List<Integer>> trainSeats;
-    private Map<String, Time> stationTimes;
+    /*
+    * Industry practice is they user String
+    * */
+    private Map<String, String> stationTimes;
     private List<String> stations;
 }

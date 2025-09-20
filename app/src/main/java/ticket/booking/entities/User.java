@@ -7,15 +7,15 @@ public class User {
     private String address;
     private String email;
     private String uuid;  /* Unique user id for the user */
-    private String hashedPassword;
+    private String password;
     private List<Ticket> ticketsBooked;
 
-    public User(String name, String address, String email, String uuid, String hashedPassword, List<Ticket> ticketsBooked) {
+    public User(String name, String address, String email, String uuid, String password, List<Ticket> ticketsBooked) {
         this.name = name;
         this.address = address;
         this.email = email;
         this.uuid = uuid;
-        this.hashedPassword = hashedPassword;
+        this.password = password;
         this.ticketsBooked = ticketsBooked;
     }
 
@@ -35,8 +35,8 @@ public class User {
         return uuid;
     }
 
-    public String getHashedPassword() {
-        return hashedPassword;
+    public String getPassword() {
+        return password;
     }
 
     public List<Ticket> getTicketsBooked() {
