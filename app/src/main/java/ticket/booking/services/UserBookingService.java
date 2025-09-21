@@ -1,7 +1,7 @@
 package ticket.booking.services;
 
-// JSON --> Object : De-serialization
-// Object --> JSON : Serialization
+// JSON   --> Object : De-serialization
+// Object -->   JSON : Serialization
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,18 +17,23 @@ public class UserBookingService {
 
     private User user;
     private List<User> userList;
-
     private ObjectMapper objectMapper = new ObjectMapper();
+
 
     private static final String USERS_PATH = "app/src/main/java/ticket/booking/localdb/user.json";
 
     public UserBookingService(User newUser) throws IOException{
         this.user = newUser;
-        loadUsers();
+        Boolean isLogged = loginUser(newUser);
+
+        if(isLogged)
+            System.out.println("User Logged in Successfully ...");
+        else
+            System.out.println("Username/Password not matching Try Again ...");
     }
 
-    public UserBookingService() throws  IOException{
-        loadUsers();
+    public UserBookingService() throws  IOException {
+        this.userList = loadUsers();
     }
 
     public List<User> loadUsers() throws IOException{

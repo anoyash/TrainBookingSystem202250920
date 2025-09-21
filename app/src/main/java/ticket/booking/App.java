@@ -3,6 +3,9 @@
  */
 package ticket.booking;
 
+import ticket.booking.services.UserBookingService;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,8 +19,17 @@ public class App {
         String username;
         String password;
         Scanner inputScanner = new Scanner(System.in);
+        UserBookingService userBookingService;
 
-        System.out.println("Welcome to Train Booking System");
+        try {
+            userBookingService = new UserBookingService();
+        } catch (IOException ex) {
+            System.out.println("There is something wrong ...");
+            System.out.println(ex);
+            return;
+        }
+
+        System.out.println(" * Welcome to Train Booking System *");
         System.out.println("Choose Option");
 
         while( option != 7){

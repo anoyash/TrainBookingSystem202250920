@@ -2,8 +2,8 @@
   {
     "user_id" : "12345",
     "name" :"Ashutosh Kumar",
-    "hashedPassword" : "abc123",
-    "tickets_Booked" : [
+    "hashed_password" : "abc123",
+    "tickets_booked" : [
       {
         "source" : "Bangalore",
         "destination" : "Delhi",
