@@ -9,13 +9,15 @@
     "email" : "ashutosh@example.com",
     "tickets_booked" : [
       {
+        "user_id" : "12345",
+        "ticket_id" : "tic12345",
         "source" : "Bangalore",
         "destination" : "Delhi",
         "date_of_travel" : "2025-09-20T18:30:00Z",
-        "train" : {
+        "user_train" : {
           "train_id": "train1",
           "train_no" : 12345,
-          "seats ": [
+          "train_seats ": [
             [0,0,0,0,0],
             [0,0,0,0,0],
             [0,0,0,0,0],
@@ -40,22 +42,24 @@
     "email" : "jaden@example.com",
     "tickets_booked" : [
       {
-        "source" : "Bangalore",
-        "destination" : "Delhi",
-        "date_of_travel" : "2025-09-20T18:30:00Z",
-        "train" : {
-          "train_id": "train1",
-          "train_no" : 12345,
-          "seats ": [
+        "user_id" : "54321",
+        "ticket_id" : "tic54321",
+        "source" : "Delhi",
+        "destination" : "Patna",
+        "date_of_travel" : "2025-09-25T18:30:00Z",
+        "user_train" : {
+          "train_id": "train2",
+          "train_no" : 12221,
+          "train_seats ": [
             [0,0,0,0,0],
             [0,0,0,0,0],
             [0,0,0,0,0],
             [0,0,0,0,0]
           ],
           "stations ": {
-            "Bangalore" : "13:50:00",
-            "Jaipur" : "14:50:00",
-            "Delhi" : "15:50:00"
+            "Delhi" : "13:50:00",
+            "PrayagRaj" : "14:50:00",
+            "Patna" : "15:50:00"
           }
         }
       }
