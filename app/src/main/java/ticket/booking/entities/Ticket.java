@@ -10,6 +10,7 @@ import java.util.Date;
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Ticket {
+    
     private String ticketId;
     private String userId;
     private String source;
