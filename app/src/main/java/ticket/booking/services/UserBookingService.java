@@ -1,5 +1,8 @@
 package ticket.booking.services;
 
+// JSON --> Object : De-serialization
+// Object --> JSON : Serialization
+
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ticket.booking.entities.User;
@@ -17,18 +20,19 @@ public class UserBookingService {
 
     private ObjectMapper objectMapper = new ObjectMapper();
 
-    private static final String USERS_PATH = "app/src/main/java/ticket/booking/localdb/User.json";
+    private static final String USERS_PATH = "app/src/main/java/ticket/booking/localdb/user.json";
 
-    public UserBookingService(User newUser) throws  IOException{
+    public UserBookingService(User newUser) throws IOException{
         this.user = newUser;
-        this.userList = getUserList();
+        loadUsers();
     }
 
-    public List<User> getUserList() throws IOException{
+    public UserBookingService() throws  IOException{
+        loadUsers();
+    }
+
+    public List<User> loadUsers() throws IOException{
         File users = new File(USERS_PATH);
-        /* We are using object mapper for de-serializing the json data.
-         * And vice - versa of this is called serialization
-         */
         return  objectMapper.readValue(users, new TypeReference<List<User>>() {});
     }
 

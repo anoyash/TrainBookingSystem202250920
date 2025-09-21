@@ -6,9 +6,41 @@ package ticket.booking;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class App {
 
     public static void main(String[] args) {
+
+        int option = 0;
+        String username;
+        String password;
+        Scanner inputScanner = new Scanner(System.in);
+
+        System.out.println("Welcome to Train Booking System");
+        System.out.println("Choose Option");
+
+        while( option != 7){
+
+            System.out.println("Option 1 : Login ");
+            System.out.println("Option 2 : SignUp");
+            System.out.println("Option 3 : Book Ticket");
+            System.out.println("Option 4 : Cancel Ticket");
+            System.out.println("Option 5 : Search Train");
+            System.out.println("Option 6 : Check Bookings");
+            System.out.println("Option 7 : Exit Application");
+            option = inputScanner.nextInt();
+            switch (option){
+                case 1 :
+                            System.out.println("Enter Username :");
+                            username  =  inputScanner.next();
+                            System.out.println("Enter Password :");
+                            password = inputScanner.next();
+                            break;
+                case 7 :
+                            System.out.println("Exiting Application ....");
+                            break;
+            }
+        }
     }
 }
